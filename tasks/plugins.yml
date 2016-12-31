@@ -19,6 +19,6 @@
   get_url:
     url="{{item.url}}"
     dest="{{sonar_ext_dir}}"
-  with_items: sonar_plugins
+  with_items: "{{ sonar_plugins }}"
   become_user: "{{sonar_owner}}"
   notify: restart sonar
