@@ -31,10 +31,16 @@
     comment="Sonar User"
   tags: sonar_setup
 
+- name: Check sonar exists
+  stat:
+    path: "{{sonar_home_dir}}/bin"
+  register: sonar_bin_stat
+
 - name: Download sonar
   get_url:
     url="{{sonar_url}}"
     dest="/tmp/{{sonar_archive}}"
+  when: sonar_bin_stat.stat.exists == False
   tags: sonar_setup
 
 - name: Create Basedir
