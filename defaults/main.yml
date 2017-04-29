@@ -143,3 +143,6 @@ sonar_backup_number: 100
 
 sonar_git_version: 1.7
 sonar_unzip_version: 6.0
+
+java_opts_web: -Xmx1024m -Xms256m
+java_opts_ce: -Xmx1024m -Xms256m
